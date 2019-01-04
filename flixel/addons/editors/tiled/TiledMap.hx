@@ -136,7 +136,7 @@ class TiledMap
 		}
 	}
 	
-	function loadLayers(source:Access):Void
+	public function loadLayers(source:Access):Void
 	{
 		for (el in source.elements)
 		{	
@@ -148,6 +148,7 @@ class TiledMap
 				case "layer": new TiledTileLayer(el, this);
 				case "objectgroup": new TiledObjectLayer(el, this);
 				case "imagelayer": new TiledImageLayer(el, this);
+				case "group": new TiledGroupLayer(el, this);
 				case _: null;
 			}
 			
